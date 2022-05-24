@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.redstoyn33.worklist.Main">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0">
+         <children>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#add" text="+" VBox.vgrow="NEVER" />
+            <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="list" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox fx:id="panel" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox maxHeight="25.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" VBox.vgrow="NEVER">
+               <children>
+                  <Pane fx:id="color" HBox.hgrow="ALWAYS" />
+                  <ColorPicker fx:id="colorP" onAction="#setColor" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
+            <SplitPane dividerPositions="0.35" maxHeight="25.0" prefHeight="25.0">
+               <items>
+                  <TextField fx:id="name" onKeyTyped="#nameEdit" />
+                  <TextField fx:id="info" onKeyTyped="#infoEdit" />
+               </items>
+            </SplitPane>
+            <TextArea fx:id="text" onKeyTyped="#textEdit" wrapText="true" VBox.vgrow="ALWAYS" />
+            <Button layoutX="10.0" layoutY="385.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete" text="Delete" textFill="RED" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
